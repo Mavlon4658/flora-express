@@ -186,6 +186,19 @@ if (likeBtn.length) {
     })
 }
 
+const reviewSwp = new Swiper('.reviews .swiper', {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    navigation: {
+        nextEl: '.reviews .swp_btn__next',
+        prevEl: '.reviews .swp_btn__prev',
+    },
+    pagination: {
+        el: '.reviews .swp_pagination',
+        clickable: true
+    }
+})
+
 document.addEventListener('click', event => {
     if (formSelect.length) {
         formSelect.forEach(el => {
