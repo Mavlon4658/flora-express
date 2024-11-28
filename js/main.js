@@ -135,7 +135,7 @@ let locationContent = document.querySelector('.header__location_content');
 
 if (locationBtn) {
     locationBtn.onclick = () => {
-        locationEl.classList.add('active');
+        locationEl.classList.toggle('active');
     }
     
     locationClose.onclick = () => {

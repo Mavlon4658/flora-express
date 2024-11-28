@@ -353,6 +353,11 @@ textarea {
     font-weight: bold;
     font-family: $font-montserrat;
     color: black;
+
+    @include media(992) {
+        font-size: 20px;
+        line-height: 120%;
+    }
 }
 
 .card {
@@ -365,6 +370,10 @@ textarea {
     &_head {
         height: 231px;
         position: relative;
+
+        @include media(992) {
+            height: 143px;
+        }
 
         .swiper {
             width: calc(100% + 2px);
@@ -386,6 +395,10 @@ textarea {
 
         .swp_btn {
             display: none;
+
+            @include media(992) {
+                display: none !important;
+            }
 
             button {
                 position: absolute;
@@ -426,6 +439,12 @@ textarea {
             left: 12px;
             bottom: 12px;
 
+            @include media(992) {
+                font-size: 8px;
+                left: 8px;
+                bottom: 8px;
+            }
+
             &-orange {
                 background: #FF973B;
             }
@@ -450,6 +469,10 @@ textarea {
         flex-direction: column;
         gap: 8px;
 
+        @include media(992) {
+            padding: 8px;
+        }
+
         h3 {
             font-size: 14px;
             line-height: 130%;
@@ -460,6 +483,10 @@ textarea {
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
+
+            @include media(992) {
+                font-size: 10px;
+            }
         }
         
         p {
@@ -470,6 +497,10 @@ textarea {
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
+
+            @include media(992) {
+                font-size: 10px;
+            }
         }
 
         .price {
@@ -487,6 +518,10 @@ textarea {
                     font-size: 14px;
                     line-height: 130%;
                     color: #000;
+
+                    @include media(992) {
+                        font-size: 10px;
+                    }
                 }
             }
 
@@ -495,6 +530,10 @@ textarea {
                 line-height: 130%;
                 font-weight: bold;
                 color: #000;
+
+                @include media(992) {
+                    font-size: 12px;
+                }
             }
         }
 
@@ -524,6 +563,10 @@ textarea {
                 font-size: 14px;
                 line-height: 130%;
                 color: #BEBEBE;
+
+                @include media(992) {
+                    font-size: 10px;
+                }
 
                 &.active {
                     color: #3AA600;
@@ -641,25 +684,83 @@ textarea {
 .header {
     padding: 16px 0 24px;
 
+    @include media(992) {
+        padding: 8.42px 0;
+        margin-bottom: 48px;
+    }
+
     &__container {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
         gap: 36px;
+
+        @include media(992) {
+            align-items: center;
+            gap: 20px;
+        }
+    }
+
+    &__left {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .bars {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        @include media(-992) {
+            display: none;
+        }
     }
 
     &__logo {
         flex-shrink: 0;
+
+        img {
+            @include media(992) {
+                display: none;
+            }
+        }
+
+        .mb {
+            display: none;
+
+            @include media(992) {
+                display: block;
+            }
+        }
     }
 
     &__location {
         position: relative;
         flex-shrink: 0;
 
+        @include media(992) {
+            position: absolute;
+            left: 0;
+            top: 48px;
+            width: 100%;
+            border: 1px solid #F0F0F0;
+            border-right: 0;
+            border-left: 0;
+            padding: 0 19px;
+        }
+
         &_inp {
             position: relative;
             z-index: 1;
             flex-shrink: 0;
+
+            @include media(992) {
+                padding: 12px 0;
+            }
 
             &::before {
                 content: "";
@@ -679,6 +780,10 @@ textarea {
                 left: 0;
                 transform: translateY(-50%);
                 z-index: -1;
+
+                @include media(992) {
+                    height: 24px;
+                }
             }
 
             input {
@@ -687,12 +792,27 @@ textarea {
                 font-size: 14px;
                 line-height: 21px;
 
+                @include media(992) {
+                    padding: 0 0 0 32px;
+                    height: 24px;
+                }
+
                 &::placeholder {
                     color: #2E2E2E;
                 }
             }
 
+            img {
+                display: none;
 
+                @include media(992) {
+                    display: block;
+                    position: absolute;
+                    right: 19px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
         }
 
         &_content {
@@ -712,6 +832,13 @@ textarea {
             align-items: flex-start;
             gap: 24px;
 
+            @include media(992) {
+                width: 100%;
+                left: 0;
+                padding: 16px;
+                bottom: 0;
+            }
+
             .close_btn {
                 position: absolute;
                 top: 15px;
@@ -721,10 +848,17 @@ textarea {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                z-index: 1;
             }
 
             .date-picker {
                 width: 100%;
+
+                @include media(992) {
+                    max-width: 383px;
+                    min-width: 350px;
+                    margin: 0 auto;
+                }
             }
 
             .flatpickr-current-month {
@@ -879,6 +1013,10 @@ textarea {
             display: flex;
             align-items: center;
             gap: 24px;
+
+            @include media(992) {
+                display: none;
+            }
         }
     }
     
@@ -887,6 +1025,40 @@ textarea {
         align-items: center;
         gap: 16px;
         width: 100%;
+
+        @include media(992) {
+            justify-content: flex-end;
+        }
+
+        .like-icon {
+            @include media(992) {
+                display: none;
+            }
+        }
+
+        .filter_btn {
+            display: none;
+
+            @include media(992) {
+                display: flex;
+                width: 24px;
+                gap: 24px;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .search_btn {
+            display: none;
+            
+            @include media(992) {
+                display: flex;
+                width: 24px;
+                height: 24px;
+                align-items: center;
+                justify-content: center;
+            }
+        }
 
         .basket-icon {
             position: relative;
@@ -911,6 +1083,10 @@ textarea {
 
         .btn-yellow-border.sm {
             padding: 13px 26px;
+
+            @include media(992) {
+                display: none;
+            }
         }
     }
 
@@ -1008,6 +1184,10 @@ textarea {
         position: relative;
         width: 100%;
 
+        @include media(992) {
+            display: none;
+        }
+
         input {
             width: 100%;
             height: 40px;
@@ -1032,6 +1212,10 @@ textarea {
     .select_currency {
         position: relative;
         flex-shrink: 0;
+
+        @include media(992) {
+            display: none;
+        }
 
         &__btn {
             padding: 4px 8px;
@@ -1124,6 +1308,10 @@ textarea {
 
     .select_lang {
         position: relative;
+
+        @include media(992) {
+            display: none;
+        }
 
         &__btn {
             width: 24px;
@@ -1305,6 +1493,10 @@ textarea {
 .navs {
     margin-bottom: 24px;
 
+    @include media(992) {
+        display: none;
+    }
+
     &__container {
         background: #3AA600;
         border-radius: 16px;
@@ -1419,6 +1611,10 @@ textarea {
 .home {
     margin-bottom: 56px;
 
+    @include media(992) {
+        display: none;
+    }
+
     &__container {
         display: flex;
         align-items: stretch;
@@ -1527,23 +1723,56 @@ textarea {
     align-items: center;
     justify-content: center;
     margin-top: 32px;
+
+    @include media(992) {
+        margin-top: 12px;
+    }
+
+    .btn-yellow-border {
+        @include media(768) {
+            width: 100%;
+        }
+    }
 }
 
 // News
 .news {
     margin-bottom: 56px;
 
+    @include media(992) {
+        margin-bottom: 24px;
+    }
+
     &__head {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-bottom: 32px;
+        
+        @include media(992) {
+            margin-bottom: 12px;
+        }
+
+        .btn-yellow-border {
+            @include media(992) {
+                display: none;
+            }
+        }
     }
 
     &__card {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 20px;
+
+        @include media(992) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        
+        @include media(768) {
+            gap: 8px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
 
         .discount-card {
             display: flex;
@@ -1556,6 +1785,10 @@ textarea {
             display: flex;
             position: relative;
             z-index: 1;
+
+            @include media(992) {
+                padding: 16px;
+            }
 
             .bg-img {
                 position: absolute;
@@ -1572,6 +1805,10 @@ textarea {
                 line-height: 120%;
                 font-family: $font-montserrat;
                 margin-bottom: 8px;
+
+                @include media(992) {
+                    font-size: 16px;
+                }
             }
 
             p {
@@ -1579,6 +1816,11 @@ textarea {
                 color: #FFF;
                 font-size: 14px;
                 line-height: 130%;
+
+                @include media(992) {
+                    font-size: 10px;
+                    line-height: 120%;
+                }
             }
         }
 
@@ -1596,18 +1838,32 @@ textarea {
             gap: 24px;
             padding: 36px;
 
+            @include media(992) {
+                padding: 16px;
+                gap: 16px;
+            }
+
             h3 {
                 font-size: 36px;
                 line-height: 120%;
                 font-weight: bold;
                 font-family: $font-montserrat;
                 max-width: 334px;
+
+                @include media(992) {
+                    font-size: 20px;
+                }
             }
 
             p {
                 font-size: 14px;
                 line-height: 20px;
                 max-width: 334px;
+
+                @include media(992) {
+                    font-size: 10px;
+                    line-height: 120%;
+                }
             }
 
             .bg-img {
@@ -1628,6 +1884,10 @@ textarea {
 // Service
 .service {
     margin-bottom: 56px;
+
+    @include media(992) {
+        display: none;
+    }
 
     &__container {
         display: flex;
@@ -1666,14 +1926,31 @@ textarea {
 .sales {
     margin-bottom: 88px;
 
+    @include media(992) {
+        margin-bottom: 24px;
+    }
+
     &__title {
         margin-bottom: 36px;
+
+        @include media(992) {
+            margin-bottom: 12px;
+        }
     }
 
     &__cards {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 20px;
+
+        @include media(992) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        
+        @include media(768) {
+            gap: 8px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
 
         &_item {
             background: #F2849E;
@@ -1682,6 +1959,10 @@ textarea {
             z-index: 1;
             overflow: hidden;
             padding: 46px 17px;
+
+            @include media(992) {
+                padding: 16px;
+            }
 
             .bg-img {
                 position: absolute;
@@ -1702,11 +1983,19 @@ textarea {
                 color: black;
                 max-width: 167px;
                 margin-bottom: 8px;
+
+                @include media(992) {
+                    font-size: 16px;
+                }
             }
 
             p {
                 font-size: 14px;
                 line-height: 130%;
+
+                @include media(992) {
+                    font-size: 10px;
+                }
             }
         }
     }
@@ -1717,14 +2006,31 @@ textarea {
 .present {
     margin-bottom: 88px;
     
+    @include media(992) {
+        margin-bottom: 24px;
+    }
+    
     &__title {
         margin-bottom: 36px;
+
+        @include media(992) {
+            margin-bottom: 12px;
+        }
     }
 
     &__cards {
         display: grid;
         gap: 20px;
         grid-template-columns: repeat(4, minmax(0, 1fr));
+
+        @include media(992) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        
+        @include media(768) {
+            gap: 8px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
 
         &_item {
             position: relative;
@@ -1736,6 +2042,10 @@ textarea {
             flex-direction: column;
             justify-content: space-between;
             padding: 29px 16px 15px 17px;
+
+            @include media(992) {
+                padding: 8px;
+            }
 
             .bg-img {
                 position: absolute;
@@ -1755,10 +2065,20 @@ textarea {
                 color: #000;
                 font-family: $font-montserrat;
                 margin-bottom: 8px;
+
+                @include media(992) {
+                    font-size: 16px;
+                }
             }
 
             p {
+                font-size: 14px;
+                line-height: 130%;
 
+                @include media(992) {
+                    font-size: 10px;
+                    line-height: 120%;
+                }
             }
         }
     }
@@ -1768,6 +2088,10 @@ textarea {
 // Reviews
 .reviews {
     margin-bottom: 88px;
+
+    @include media(992) {
+        display: none;
+    }
 
     &__head {
         display: flex;
@@ -1868,14 +2192,31 @@ textarea {
 .gift {
     margin-bottom: 56px;
 
+    @include media(992) {
+        margin-bottom: 24px;
+    }
+
     &__title {
         margin-bottom: 32px;
+
+        @include media(992) {
+            margin-bottom: 12px;
+        }
     }
 
     &__cards {
         display: grid;
         gap: 20px;
         grid-template-columns: repeat(4, minmax(0, 1fr));
+
+        @include media(992) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        
+        @include media(768) {
+            gap: 8px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
     }
 }
 // Gift end
@@ -1883,6 +2224,10 @@ textarea {
 // Buy
 .buy {
     margin-bottom: 56px;
+
+    @include media(992) {
+        display: none;
+    }
 
     &__container {
         background: #FDF5F2;
@@ -1921,6 +2266,10 @@ textarea {
 // About
 .about {
     margin-bottom: 88px;
+
+    @include media(992) {
+        display: none;
+    }
 
     &__container {
         display: flex;
@@ -2003,6 +2352,10 @@ textarea {
         padding-bottom: 32px;
         border-bottom: 1px solid rgba(0, 0, 0, 10%);
 
+        @include media(992) {
+            display: none;
+        }
+
         h3 {
             font-size: 13px;
             font-weight: bold;
@@ -2048,6 +2401,10 @@ textarea {
         grid-template-columns: repeat(4, minmax(0, 1fr));
         padding: 32px 0 37px;
 
+        @include media(992) {
+            display: none;
+        }
+
         &_item {
             display: flex;
             flex-direction: column;
@@ -2082,6 +2439,45 @@ textarea {
             .tel-link {
                 color: #2E2E2E;
             }
+        }
+    }
+
+    &-mb {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 24px 0 36px;
+        gap: 16px;
+
+        @include media(-992) {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .link {
+            color: #3AA600;
+            font-size: 14px;
+            line-height: 130%;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &:active {
+                color: #FFC24E;
+                text-decoration: none;
+            }
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 130%;
         }
     }
 }

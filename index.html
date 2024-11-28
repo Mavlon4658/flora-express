@@ -20,9 +20,15 @@
         <!-- Header -->
         <header class="header">
             <div class="container header__container">
-                <a href="/" class="header__logo">
-                    <img src="./images/logo.svg" alt="">
-                </a>
+                <div class="header__left">
+                    <button class="bars">
+                        <img src="./images/bars.svg" alt="">
+                    </button>
+                    <a href="/" class="header__logo">
+                        <img src="./images/logo.svg" alt="">
+                        <img src="./images/logo-mb.svg" alt="" class="mb">
+                    </a>
+                </div>
                 <div class="header__content">
                     <div class="header__content_top">
                         <div class="header__location">
@@ -32,6 +38,7 @@
                                     <path d="M8 8.63636C9.10457 8.63636 10 7.78163 10 6.72727C10 5.67291 9.10457 4.81818 8 4.81818C6.89543 4.81818 6 5.67291 6 6.72727C6 7.78163 6.89543 8.63636 8 8.63636Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                                 <input type="text" placeholder="Город доставки и дата" value="Москва (МКАД), Россия—на 21 января">
+                                <img src="./images/arrow-down.svg" alt="">
                             </div>
                             <div class="header__location_content">
                                 <button type="button" class="close_btn">
@@ -65,6 +72,9 @@
                             </div>
                         </div>
                         <div class="header__right">
+                            <button class="search_btn">
+                                <img src="./images/search.svg" alt="">
+                            </button>
                             <div class="header__search form_inp">
                                 <input type="text" placeholder="Поиск бренда или подарка">
                                 <button>
@@ -155,7 +165,10 @@
                                     </li>
                                 </ul>
                             </div>
-                            <a href="#">
+                            <button class="filter_btn">
+                                <img src="./images/filter-icon.svg" alt="">
+                            </button>
+                            <a href="#" class="like-icon">
                                 <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M19.4578 2.50292C18.9691 2.02645 18.3889 1.64848 17.7503 1.39061C17.1117 1.13273 16.4272 1 15.7359 1C15.0446 1 14.3601 1.13273 13.7215 1.39061C13.0829 1.64848 12.5026 2.02645 12.0139 2.50292L10.9997 3.4913L9.98554 2.50292C8.99842 1.54094 7.6596 1.0005 6.26361 1.0005C4.86761 1.0005 3.52879 1.54094 2.54168 2.50292C1.55456 3.46491 1 4.76964 1 6.1301C1 7.49055 1.55456 8.79528 2.54168 9.75727L3.55588 10.7457L10.9997 18L18.4436 10.7457L19.4578 9.75727C19.9467 9.28102 20.3346 8.71557 20.5992 8.0932C20.8638 7.47084 21 6.80377 21 6.1301C21 5.45642 20.8638 4.78935 20.5992 4.16699C20.3346 3.54463 19.9467 2.97917 19.4578 2.50292Z" fill="white" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -2404,6 +2417,28 @@
                         <a href="#">Все контакты</a>
                     </div>
                 </div>
+            </div>
+            <div class="footer-mb">
+                <ul class="networks">
+                    <li>
+                        <a href="#">
+                            <img src="./images/network-1.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./images/network-2.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./images/network-3.svg" alt="">
+                        </a>
+                    </li>
+                </ul>
+                <a href="#" class="link">Полная версия сайта</a>
+                <p>© 2006–2024 Flora Express</p>
+                <a href="#" class="link">Цветочный блог</a>
             </div>
         </footer>
         <!-- Footer end -->
