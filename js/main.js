@@ -199,6 +199,60 @@ const reviewSwp = new Swiper('.reviews .swiper', {
     }
 })
 
+const rangesEl = document.querySelectorAll(".form_range");
+
+if (rangesEl.length) {
+    rangesEl.forEach(range => {
+        let rangeS = range.querySelectorAll("input[type=range]"),
+            numberS = range.querySelectorAll(".val"),
+            line = range.querySelector('.line'),
+            min = rangeS[0].min,
+            max = rangeS[0].max;
+
+        const handleRange = () => {
+            let slide1 = parseFloat(rangeS[0].value),
+                slide2 = parseFloat(rangeS[1].value);
+        
+            if (slide1 > slide2) [slide1, slide2] = [slide2, slide1];
+        
+            numberS[0].textContent = slide1;
+            numberS[1].textContent = slide2;
+
+            line.style.left = 100 * slide1 / max + '%';
+            line.style.width = 100 * (slide2 - slide1) / max + '%';
+        }
+
+        handleRange();
+
+        rangeS.forEach(function(el) {
+            el.oninput = function() {
+                handleRange();
+            }
+        });
+    })
+}
+
+const navsContent = document.querySelectorAll('.navs-mb__content_item');
+
+if (navsContent.length) {
+    navsContent.forEach(el => {
+        let btn = el.querySelector('.navs-mb__content_btn'),
+            content = el.querySelector('.navs-mb__list');
+
+        if (content) {
+            btn.onclick = () => {
+                navsContent.forEach(a => {
+                    if (a === el) {
+                        a.classList.toggle('active');
+                    } else {
+                        a.classList.remove('active');
+                    }
+                })
+            }
+        }
+    })
+}
+
 document.addEventListener('click', event => {
     if (formSelect.length) {
         formSelect.forEach(el => {
@@ -210,5 +264,13 @@ document.addEventListener('click', event => {
 
     if (locationEl && !locationEl.contains(event.target)) {
         locationEl.classList.remove('active');
+    }
+
+    if (navsContent.length) {
+        navsContent.forEach(el => {
+            if (!el.contains(event.target)) {
+                el.classList.remove('active');
+            }
+        })
     }
 })
