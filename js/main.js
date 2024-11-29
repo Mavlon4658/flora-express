@@ -20,23 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         })
     }
-    // flatpickr(".date-input", {
-    //     'inline' : true,
-    //     locale: "ru",
-    //     dateFormat: "d.m.Y",
-    //     disableMobile: true,
-    //     onReady: function (selectedDates, dateStr, instance) {
-    //         const calendarContainer = instance.calendarContainer;
-    //         const monthYearElements = calendarContainer.querySelectorAll(".flatpickr-monthDropdown-months, .numInputWrapper");
-
-    //         monthYearElements.forEach(element => {
-    //             const input = element.querySelector("input");
-    //             if (input) {
-    //                 input.setAttribute("readonly", true);
-    //             }
-    //         });
-    //     }
-    // });
 });
 
 const modalClasses = ['.login-modal'];
@@ -251,6 +234,24 @@ if (navsContent.length) {
             }
         }
     })
+}
+
+const filterModal = document.querySelector('section.filter');
+const filterModalOpen = document.querySelectorAll('.filter-modal__open');
+const filterModalClose = document.querySelector('.filter__close');
+
+if (filterModalOpen.length) {
+    filterModalOpen.forEach(el => {
+        el.onclick = e => {
+            e.preventDefault();
+            filterModal.classList.add('active');
+            bodyHidden();
+        }
+    })
+    filterModalClose.onclick = () => {
+        filterModal.classList.remove('active');
+        bodyVisible();
+    }
 }
 
 document.addEventListener('click', event => {
