@@ -254,6 +254,52 @@ if (filterModalOpen.length) {
     }
 }
 
+const mobileMenu = document.querySelector('.mobile-menu');
+const mobileMenuOpen = document.querySelector('.mobile-menu__open');
+const mobileMenuClose = document.querySelector('.mobile-menu__close');
+const mobileMenuBg = document.querySelector('.mobile-menu__bg');
+
+mobileMenuOpen.onclick = e => {
+    e.preventDefault();
+    mobileMenu.classList.add('active');
+    bodyHidden();
+}
+
+mobileMenuClose.onclick = () => {
+    mobileMenu.classList.remove('active');
+    bodyVisible();
+}
+
+mobileMenuBg.onclick = () => {
+    mobileMenu.classList.remove('active');
+    bodyVisible();
+}
+
+const menuNavsBtn = document.querySelectorAll('.moible-menu__navs_btn');
+const menuNavsContent = document.querySelectorAll('.mobile-menu__navs_content');
+
+if (menuNavsBtn.length) {
+    menuNavsBtn.forEach(el => {
+        const dataNavsItem = el.getAttribute('data-navs');
+        el.onclick = () => {
+            menuNavsContent.forEach(content => {
+                if (dataNavsItem == content.getAttribute('data-navs-item')) {
+                    content.classList.add('active');
+                }
+            })
+        }
+    })
+
+    menuNavsContent.forEach(el => {
+        const btn = el.querySelector('.back-btn');
+        if (btn) {
+            btn.onclick = () => {
+                el.classList.remove('active');
+            }
+        }
+    })
+}
+
 document.addEventListener('click', event => {
     if (formSelect.length) {
         formSelect.forEach(el => {
