@@ -1855,7 +1855,7 @@ textarea {
 
 .navs-mb {
   position: relative;
-  padding: 5.5px 16px 6px;
+  padding: 7.5px 16px 6px;
   margin-bottom: 12px;
 }
 @media screen and (min-width: 992px) {
@@ -2175,7 +2175,7 @@ textarea {
 }
 @media screen and (max-width: 992px) {
   .more-card {
-    margin-top: 12px;
+    margin-top: 16px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -2221,7 +2221,7 @@ textarea {
 }
 @media screen and (max-width: 768px) {
   .news__card {
-    gap: 6px;
+    gap: 8px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -2292,6 +2292,7 @@ textarea {
   .news__card .big-card {
     padding: 16px;
     gap: 16px;
+    margin: 4px 0;
   }
 }
 .news__card .big-card h3 {
@@ -2394,7 +2395,7 @@ textarea {
 }
 @media screen and (max-width: 768px) {
   .sales__cards {
-    gap: 6px;
+    gap: 8px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -2475,7 +2476,7 @@ textarea {
 }
 @media screen and (max-width: 768px) {
   .present__cards {
-    gap: 6px;
+    gap: 8px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -2643,7 +2644,7 @@ textarea {
 }
 @media screen and (max-width: 768px) {
   .gift__cards {
-    gap: 6px;
+    gap: 8px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

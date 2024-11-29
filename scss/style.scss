@@ -2054,7 +2054,7 @@ textarea {
 // Navs mobile
 .navs-mb {
     position: relative;
-    padding: 5.5px 16px 6px;
+    padding: 7.5px 16px 6px;
     margin-bottom: 12px;
 
     @include media(-992) {
@@ -2436,7 +2436,7 @@ textarea {
     margin-top: 32px;
 
     @include media(992) {
-        margin-top: 12px;
+        margin-top: 16px;
     }
 
     .btn-yellow-border {
@@ -2482,7 +2482,7 @@ textarea {
         }
         
         @include media(768) {
-            gap: 6px;
+            gap: 8px;
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
@@ -2553,6 +2553,7 @@ textarea {
             @include media(992) {
                 padding: 16px;
                 gap: 16px;
+                margin: 4px 0;
             }
 
             h3 {
@@ -2660,7 +2661,7 @@ textarea {
         }
         
         @include media(768) {
-            gap: 6px;
+            gap: 8px;
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
@@ -2740,7 +2741,7 @@ textarea {
         }
         
         @include media(768) {
-            gap: 6px;
+            gap: 8px;
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
@@ -2926,7 +2927,7 @@ textarea {
         }
         
         @include media(768) {
-            gap: 6px;
+            gap: 8px;
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
     }
