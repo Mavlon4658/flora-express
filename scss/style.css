@@ -2221,7 +2221,7 @@ textarea {
 }
 @media screen and (max-width: 768px) {
   .news__card {
-    gap: 8px;
+    gap: 12px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -2395,7 +2395,7 @@ textarea {
 }
 @media screen and (max-width: 768px) {
   .sales__cards {
-    gap: 8px;
+    gap: 12px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -2476,7 +2476,7 @@ textarea {
 }
 @media screen and (max-width: 768px) {
   .present__cards {
-    gap: 8px;
+    gap: 12px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -2529,6 +2529,13 @@ textarea {
   .present__cards_item p {
     font-size: 10px;
     line-height: 120%;
+  }
+}
+@media screen and (max-width: 520px) {
+  .present__cards_item a {
+    font-size: 12px;
+    padding: 12px 12px;
+    height: auto;
   }
 }
 
@@ -2644,7 +2651,7 @@ textarea {
 }
 @media screen and (max-width: 768px) {
   .gift__cards {
-    gap: 8px;
+    gap: 12px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
