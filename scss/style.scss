@@ -3272,6 +3272,10 @@ textarea {
 // Categies
 .categories {
     margin-bottom: 80px;
+
+    @include media(992) {
+        margin-bottom: 24px;
+    }
     
     &__head {
         display: flex;

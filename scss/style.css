@@ -2940,6 +2940,11 @@ textarea {
 .categories {
   margin-bottom: 80px;
 }
+@media screen and (max-width: 992px) {
+  .categories {
+    margin-bottom: 24px;
+  }
+}
 .categories__head {
   display: flex;
   align-items: center;
