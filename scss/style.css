@@ -2987,7 +2987,7 @@ textarea {
     left: 0;
     width: 0;
     overflow: hidden;
-    height: 100svh;
+    height: 100%;
     z-index: 5;
   }
   .categories__filter.active {
@@ -3112,6 +3112,13 @@ textarea {
   font-size: 16px;
   font-weight: bold;
   font-family: "Montserrat", sans-serif;
+}
+.categories__filter_content .accordion__btn img {
+  transition: 0.3s ease all;
+  transform: rotateZ(180deg);
+}
+.categories__filter_content .accordion.active .accordion__btn img {
+  transform: rotateZ(0);
 }
 .categories__filter_content ul {
   display: flex;

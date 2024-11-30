@@ -3320,7 +3320,7 @@ textarea {
             left: 0;
             width: 0;
             overflow: hidden;
-            height: 100svh;
+            height: 100%;
             z-index: 5;
 
             &.active {
@@ -3465,6 +3465,15 @@ textarea {
                 font-size: 16px;
                 font-weight: bold;
                 font-family: $font-montserrat;
+
+                img {
+                    transition: .3s ease all;
+                    transform: rotateZ(180deg);
+                }
+            }
+
+            .accordion.active .accordion__btn img {
+                transform: rotateZ(0);
             }
 
             ul {
