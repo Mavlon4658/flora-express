@@ -348,6 +348,26 @@ if (cFilter) {
     }
 }
 
+const pChildSwp = new Swiper('.product .child_swp .swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    loop: true,
+    navigation: {
+        nextEl: '.product .child_swp .swp_btn__next'
+    }
+})
+
+const pPrentSwp = new Swiper('.product .parent_swp .swiper', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    effect: 'fade',
+    loop: true,
+    allowTouchMove: false,
+    thumbs: {
+        swiper: pChildSwp,
+    },
+})
+
 document.addEventListener('click', event => {
     if (formSelect.length) {
         formSelect.forEach(el => {
