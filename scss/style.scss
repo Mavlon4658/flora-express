@@ -3501,9 +3501,13 @@ textarea {
             .content {
                 &_head {
                     display: flex;
-                    align-items: flex-start;
+                    align-items: center;
                     justify-content: space-between;
                     margin-bottom: 20px;
+
+                    @include media(992) {
+                        align-items: flex-start;
+                    }
 
                     @include media(576) {
                         flex-direction: column;
@@ -3534,21 +3538,25 @@ textarea {
                         ul {
                             display: flex;
                             align-items: center;
-                            gap: 18px;
+                            gap: 4px;
                             
                             @include media(992) {
                                 flex-wrap: wrap;
-                                gap: 12px;
+                                gap: 4px;
                             }
                         }
 
                         a {
-                            font-size: 16px;
+                            font-size: 14px;
                             line-height: 24px;
                             font-weight: 400;
                             display: flex;
                             align-items: center;
                             gap: 4px;
+                            padding: 2px 8px;
+                            border: 1px solid #F0F0F0;
+                            border-radius: 20px;
+                            @extend .drop-shadow;
 
                             @include media(992) {
                                 // font-size: 14px;
@@ -3558,8 +3566,27 @@ textarea {
                                 display: none;
                             }
 
+                            .icon {
+                                width: 16px;
+                                height: 16px;
+                                background: #FFF;
+                                border-radius: 50%;
+                                display: none;
+                                align-items: center;
+                                justify-content: center;
+
+                                img {
+                                    width: 12px;
+                                }
+                            }
+
                             &.active {
-                                color: #3AA600;
+                                background: #3AA600;
+                                color: #FFF;
+
+                                .icon {
+                                    display: flex;
+                                }
 
                                 img {
                                     display: block;

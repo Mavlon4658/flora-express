@@ -90,7 +90,7 @@ textarea {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.05), 0 0 16px rgba(0, 0, 0, 0.15);
 }
 
-.drop-shadow, .categories__content_right .content_result li, .navs-mb__list.list-2 ul a, .navs-mb__content_btn, .mobile-menu .currency button:not(.active), .mobile-menu .lang button:not(.active), .header .select_currency__btn input {
+.drop-shadow, .categories__content_right .content_result li, .categories__content_right .content_head__sort a, .navs-mb__list.list-2 ul a, .navs-mb__content_btn, .mobile-menu .currency button:not(.active), .mobile-menu .lang button:not(.active), .header .select_currency__btn input {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
 }
 
@@ -3113,9 +3113,14 @@ textarea {
 }
 .categories__content_right .content_head {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 992px) {
+  .categories__content_right .content_head {
+    align-items: flex-start;
+  }
 }
 @media screen and (max-width: 576px) {
   .categories__content_right .content_head {
@@ -3143,27 +3148,46 @@ textarea {
 .categories__content_right .content_head__sort ul {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 4px;
 }
 @media screen and (max-width: 992px) {
   .categories__content_right .content_head__sort ul {
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 4px;
   }
 }
 .categories__content_right .content_head__sort a {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 24px;
   font-weight: 400;
   display: flex;
   align-items: center;
   gap: 4px;
+  padding: 2px 8px;
+  border: 1px solid #F0F0F0;
+  border-radius: 20px;
 }
 .categories__content_right .content_head__sort a img {
   display: none;
 }
+.categories__content_right .content_head__sort a .icon {
+  width: 16px;
+  height: 16px;
+  background: #FFF;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.categories__content_right .content_head__sort a .icon img {
+  width: 12px;
+}
 .categories__content_right .content_head__sort a.active {
-  color: #3AA600;
+  background: #3AA600;
+  color: #FFF;
+}
+.categories__content_right .content_head__sort a.active .icon {
+  display: flex;
 }
 .categories__content_right .content_head__sort a.active img {
   display: block;
