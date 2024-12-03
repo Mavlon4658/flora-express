@@ -376,6 +376,7 @@ textarea {
   display: flex;
   align-items: center;
   gap: 2px;
+  position: relative;
 }
 .form_range__val_item:first-child {
   border-right: 1px solid #E0E0E0;
@@ -387,9 +388,15 @@ textarea {
 .form_range__val_item .val {
   font-size: 16px;
   line-height: 24px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 32px;
 }
 .form_range svg,
-.form_range input[type=range] {
+.form_range input[type=range]:not(.val) {
   position: absolute;
   left: 0;
   top: 10px;
@@ -400,12 +407,6 @@ textarea {
   height: 4px;
   color: transparent;
   background: transparent;
-}
-.form_range input[type=number] {
-  border: 1px solid #ddd;
-  text-align: center;
-  font-size: 1.6em;
-  -moz-appearance: textfield;
 }
 .form_range input[type=number]::-webkit-outer-spin-button,
 .form_range input[type=number]::-webkit-inner-spin-button {

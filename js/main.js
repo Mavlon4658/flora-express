@@ -187,33 +187,48 @@ const rangesEl = document.querySelectorAll(".form_range");
 if (rangesEl.length) {
     rangesEl.forEach(range => {
         let rangeS = range.querySelectorAll("input[type=range]"),
-            numberS = range.querySelectorAll(".val"),
+            numberS = range.querySelectorAll("input.val"),
             line = range.querySelector('.line'),
-            min = rangeS[0].min,
-            max = rangeS[0].max;
+            min = parseFloat(rangeS[0].min),
+            max = parseFloat(rangeS[0].max);
 
         const handleRange = () => {
             let slide1 = parseFloat(rangeS[0].value),
                 slide2 = parseFloat(rangeS[1].value);
-        
+            
             if (slide1 > slide2) [slide1, slide2] = [slide2, slide1];
-        
-            numberS[0].textContent = slide1;
-            numberS[1].textContent = slide2;
+
+            numberS[0].value = slide1;
+            numberS[1].value = slide2;
 
             line.style.left = 100 * slide1 / max + '%';
             line.style.width = 100 * (slide2 - slide1) / max + '%';
-        }
+        };
+
+        const handleNumber = () => {
+            let num1 = parseFloat(numberS[0].value),
+                num2 = parseFloat(numberS[1].value);
+            
+            if (num1 > num2) [num1, num2] = [num2, num1];
+
+            rangeS[0].value = num1;
+            rangeS[1].value = num2;
+
+            handleRange();
+        };
 
         handleRange();
 
-        rangeS.forEach(function(el) {
-            el.oninput = function() {
-                handleRange();
-            }
+        rangeS.forEach(el => {
+            el.oninput = handleRange;
         });
-    })
+
+        numberS.forEach(el => {
+            el.oninput = handleNumber;
+        });
+    });
 }
+
 
 const navsContent = document.querySelectorAll('.navs-mb__content_item');
 
