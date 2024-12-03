@@ -90,7 +90,7 @@ textarea {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.05), 0 0 16px rgba(0, 0, 0, 0.15);
 }
 
-.drop-shadow, .categories__content_right .content_result a, .navs-mb__list.list-2 ul a, .navs-mb__content_btn, .mobile-menu .currency button:not(.active), .mobile-menu .lang button:not(.active), .header .select_currency__btn input {
+.drop-shadow, .categories__content_right .content_result li, .navs-mb__list.list-2 ul a, .navs-mb__content_btn, .mobile-menu .currency button:not(.active), .mobile-menu .lang button:not(.active), .header .select_currency__btn input {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
 }
 
@@ -542,7 +542,7 @@ textarea {
 }
 @media screen and (max-width: 992px) {
   .sec-title {
-    font-size: 20px;
+    font-size: 22px;
     line-height: 120%;
   }
 }
@@ -552,45 +552,16 @@ textarea {
   border-radius: 16px;
   border: 1px solid #FFF;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.15), 0 0 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #FFF;
 }
 .card_head {
-  height: 231px;
+  width: 100%;
+  aspect-ratio: 100/87.2;
   position: relative;
 }
-@media screen and (max-width: 992px) {
-  .card_head {
-    height: 143px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .card_head {
-    height: 250px;
-  }
-}
-@media screen and (max-width: 650px) {
-  .card_head {
-    height: 200px;
-  }
-}
-@media screen and (max-width: 500px) {
-  .card_head {
-    height: 180px;
-  }
-}
-@media screen and (max-width: 460px) {
-  .card_head {
-    height: 160px;
-  }
-}
-@media screen and (max-width: 415px) {
-  .card_head {
-    height: 143px;
-  }
-}
 .card_head .swiper {
-  width: calc(100% + 2px);
-  height: calc(100% + 1px);
-  margin: -1px 0 0 -1px;
+  width: 100%;
+  height: 100%;
   z-index: 0;
   border-radius: 16px 16px 0 0;
 }
@@ -689,7 +660,6 @@ textarea {
 }
 @media screen and (max-width: 992px) {
   .card_body h3 {
-    font-size: 12px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -705,11 +675,6 @@ textarea {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-@media screen and (max-width: 992px) {
-  .card_body p {
-    font-size: 12px;
-  }
 }
 .card_body .price {
   display: flex;
@@ -727,11 +692,6 @@ textarea {
   line-height: 130%;
   color: #000;
 }
-@media screen and (max-width: 992px) {
-  .card_body .price .degree span {
-    font-size: 12px;
-  }
-}
 .card_body .price h4 {
   font-size: 16px;
   line-height: 130%;
@@ -740,7 +700,7 @@ textarea {
 }
 @media screen and (max-width: 992px) {
   .card_body .price h4 {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 .card_body .like {
@@ -765,21 +725,12 @@ textarea {
   line-height: 130%;
   color: #BEBEBE;
 }
-@media screen and (max-width: 992px) {
-  .card_body .like h5 {
-    font-size: 12px;
-  }
-}
 .card_body .like h5.active {
   color: #3AA600;
 }
 .card:hover {
   border-color: #3AA600;
   box-shadow: 0 8px 16px -13px rgba(0, 0, 0, 0.15);
-}
-.card:hover .card_head .swiper {
-  border: 1px solid #3AA600;
-  border-bottom: 0;
 }
 .card:hover .card_head .swp_btn {
   display: block;
@@ -988,6 +939,7 @@ textarea {
   .header__location_inp input {
     padding: 0 0 0 32px;
     height: 24px;
+    font-size: 16px;
   }
 }
 .header__location_inp input::-moz-placeholder {
@@ -1880,7 +1832,7 @@ textarea {
   gap: 6px;
 }
 .navs-mb__content_btn span {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 130%;
 }
 .navs-mb__content_item.active .navs-mb__content_btn {
@@ -2262,7 +2214,7 @@ textarea {
 }
 @media screen and (max-width: 992px) {
   .news__card .discount-card h3 {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 .news__card .discount-card p {
@@ -2273,7 +2225,6 @@ textarea {
 }
 @media screen and (max-width: 992px) {
   .news__card .discount-card p {
-    font-size: 10px;
     line-height: 120%;
   }
 }
@@ -2307,7 +2258,7 @@ textarea {
 }
 @media screen and (max-width: 992px) {
   .news__card .big-card h3 {
-    font-size: 20px;
+    font-size: 22px;
   }
 }
 .news__card .big-card p {
@@ -2317,7 +2268,6 @@ textarea {
 }
 @media screen and (max-width: 992px) {
   .news__card .big-card p {
-    font-size: 10px;
     line-height: 120%;
   }
 }
@@ -2438,17 +2388,12 @@ textarea {
 }
 @media screen and (max-width: 992px) {
   .sales__cards_item h3 {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 .sales__cards_item p {
   font-size: 14px;
   line-height: 130%;
-}
-@media screen and (max-width: 992px) {
-  .sales__cards_item p {
-    font-size: 10px;
-  }
 }
 
 .present {
@@ -2521,7 +2466,7 @@ textarea {
 }
 @media screen and (max-width: 992px) {
   .present__cards_item h3 {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 .present__cards_item p {
@@ -2530,7 +2475,6 @@ textarea {
 }
 @media screen and (max-width: 992px) {
   .present__cards_item p {
-    font-size: 10px;
     line-height: 120%;
   }
 }
@@ -2897,40 +2841,19 @@ textarea {
     gap: 8px;
   }
 }
-.breadcrumb .btn-yellow-border {
-  padding: 0;
-  height: 48px;
-  width: 122px;
-  align-items: center;
-  flex-shrink: 0;
-  margin-right: 12px;
-}
-@media screen and (max-width: 992px) {
-  .breadcrumb .btn-yellow-border {
-    width: 24px;
-    height: 24px;
-    border-radius: 5px;
-  }
-  .breadcrumb .btn-yellow-border img {
-    width: 24px;
-  }
-  .breadcrumb .btn-yellow-border span {
-    display: none;
-  }
-}
-.breadcrumb a:not(.btn-yellow-border), .breadcrumb span {
+.breadcrumb a, .breadcrumb span {
   font-size: 16px;
   line-height: 24px;
   color: #36322C;
 }
 @media screen and (max-width: 992px) {
-  .breadcrumb a:not(.btn-yellow-border), .breadcrumb span {
-    font-size: 12px;
+  .breadcrumb a, .breadcrumb span {
+    font-size: 14px;
   }
 }
 @media screen and (max-width: 992px) {
   .breadcrumb .icon {
-    width: 12px;
+    width: 14px;
   }
 }
 .breadcrumb span {
@@ -2964,7 +2887,7 @@ textarea {
 }
 @media screen and (max-width: 992px) {
   .categories__head .title h2 {
-    font-size: 24px;
+    font-size: 26px;
   }
 }
 .categories__head .title p {
@@ -3124,12 +3047,14 @@ textarea {
   font-weight: bold;
   font-family: "Montserrat", sans-serif;
 }
-.categories__filter_content .accordion__btn img {
+.categories__filter_content .accordion__btn svg {
   transition: 0.3s ease all;
+}
+.categories__filter_content .accordion.active .accordion__btn svg {
   transform: rotateZ(180deg);
 }
-.categories__filter_content .accordion.active .accordion__btn img {
-  transform: rotateZ(0);
+.categories__filter_content .accordion.active .accordion__btn svg path {
+  stroke: #3AA600;
 }
 .categories__filter_content ul {
   display: flex;
@@ -3233,11 +3158,6 @@ textarea {
   align-items: center;
   gap: 4px;
 }
-@media screen and (max-width: 992px) {
-  .categories__content_right .content_head__sort a {
-    font-size: 14px;
-  }
-}
 .categories__content_right .content_head__sort a img {
   display: none;
 }
@@ -3298,7 +3218,7 @@ textarea {
   gap: 8px;
   margin-bottom: 20px;
 }
-.categories__content_right .content_result a {
+.categories__content_right .content_result li {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3306,13 +3226,17 @@ textarea {
   border: 1px solid #F0F0F0;
   border-radius: 20px;
   padding: 6px 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
-.categories__content_right .content_result a span {
+.categories__content_right .content_result li span {
   font-size: 14px;
   line-height: 130%;
 }
 @media screen and (max-width: 992px) {
-  .categories__content_right .content_result a span {
+  .categories__content_right .content_result li span {
     font-size: 14px;
   }
 }

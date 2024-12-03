@@ -368,6 +368,41 @@ const pPrentSwp = new Swiper('.product .parent_swp .swiper', {
     },
 })
 
+const filterItems = document.querySelectorAll('.categories__filter .form_checkbox');
+const filterResult = document.querySelector('.categories__content_right .content_result');
+const sortFilter = () => {
+    filterResult.innerHTML = ''
+    filterItems.forEach((el, elID) => {
+        const inp = el.querySelector('input');
+        if (inp.checked) {
+            const li = document.createElement('li');
+
+            const span = document.createElement('span');
+            span.textContent = el.querySelector('label').textContent;
+            li.appendChild(span);
+
+            const image = document.createElement('img');
+            image.setAttribute('src', './images/times-sm.svg');
+            li.appendChild(image);
+
+            filterResult.appendChild(li);
+
+            li.onclick = () => {
+                inp.click();
+            }
+        }
+    })
+}
+
+if (filterItems.length) {
+    sortFilter();
+    filterItems.forEach(el => {
+        el.querySelector('input').oninput = () => {
+            setTimeout(sortFilter(), 100);
+        }
+    })
+}
+
 document.addEventListener('click', event => {
     if (formSelect.length) {
         formSelect.forEach(el => {
