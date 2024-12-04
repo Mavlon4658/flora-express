@@ -2005,7 +2005,24 @@
                     </button>
                     <div class="navs-mb__list list-2">
                         <img src="./images/rectangle.svg" alt="" class="corner-icon">
-                        <h3>Цены</h3>
+                        <div class="list-2__head">
+                            <h3>Цены</h3>
+                            <div class="select_currency">
+                                <div class="select_currency__btn">
+                                    <input type="text" value="РУБ" currency-icon="icon-0">
+                                    <img src="./images/arrow-down.svg" alt="">
+                                </div>
+                                <ul class="select_currency__list">
+                                    <li class="icon">
+                                        <img src="./images/rectangle.svg" alt="">
+                                    </li>
+                                    <li class="active" data-currency="РУБ">₽ Рубли</li>
+                                    <li data-currency="USD">$ доллары</li>
+                                    <li data-currency="EUR">€ евро</li>
+                                    <li data-currency="KZT">₸ тенге</li>
+                                </ul>
+                            </div>
+                        </div>
                         <div class="form_range">
                             <div class="form_range__inp">
                                 <div class="line"></div>
@@ -2016,13 +2033,15 @@
                                 <div class="form_range__val_item">
                                     <span>От</span>
                                     <input class="val" type="number" value="0" min="0" max="15000" step="1">
+                                    <span class="currency" currency-icon="icon-0">₽</span>
                                 </div>
                                 <div class="form_range__val_item">
                                     <span>До</span>
                                     <input class="val" type="number" value="0" min="0" max="15000" step="1">
+                                    <span class="currency" currency-icon="icon-0">₽</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> 
                         <ul>
                             <li>
                                 <a href="#">от 100 ₽</a>

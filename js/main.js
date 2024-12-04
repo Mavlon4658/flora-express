@@ -63,23 +63,39 @@ langItem.forEach(el => {
     }
 })
 
-let currencyItem = document.querySelectorAll('.select_currency__list li');
-let currencyInp = document.querySelector('.select_currency__btn input');
+const currencyEl = document.querySelectorAll('.select_currency');
 
-if (currencyItem.length) {
-    currencyItem.forEach(el => {
-        el.onclick = () => {
-            currencyInp.value = el.getAttribute('data-currency');
-            currencyItem.forEach(item => {
-                if (item == el) {
-                    item.classList.add('active');
-                } else {
-                    item.classList.remove('active');
-                }
-            })
-        }
+if (currencyEl.length) {
+    currencyEl.forEach(el => {
+        let currencyItem = el.querySelectorAll('.select_currency__list li');
+        let currencyInp = el.querySelector('.select_currency__btn input');
+        
+        currencyItem.forEach(item => {
+            item.onclick = () => {
+                currencyInp.value = item.getAttribute('data-currency');
+                const i = document.querySelectorAll(`span[currency-icon="${currencyInp.getAttribute('currency-icon')}"]`);
+                i.forEach(iItem => {
+                    iItem.textContent = item.textContent[0];
+                })
+                currencyItem.forEach(a => {
+                    if (a == item) {
+                        a.classList.add('active');
+                    } else {
+                        a.classList.remove('active');
+                    }
+                })
+            }
+        })
     })
 }
+
+
+// if (currencyItem.length) {
+//     currencyItem.forEach(el => {
+//         el.onclick = () => {
+//         }
+//     })
+// }
 
 const formSelect = document.querySelectorAll('.form_select');
 

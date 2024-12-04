@@ -86,11 +86,11 @@ textarea {
   color: #2E2E2E;
 }
 
-.card-shadow, .navs-mb__list, .navs__content, .mobile-menu__content, .header .information__list, .header .select_lang__list, .header .select_currency__list, .header__phone_list, .header__location_content {
+.card-shadow, .categories__content .select_currency__list, .navs-mb__list.list-2 .select_currency__list, .navs-mb__list, .navs__content, .mobile-menu__content, .header .information__list, .header .select_lang__list, .header .select_currency__list, .header__phone_list, .header__location_content {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.05), 0 0 16px rgba(0, 0, 0, 0.15);
 }
 
-.drop-shadow, .categories__content_right .content_result li, .categories__content_right .content_head__sort a, .navs-mb__list.list-2 ul a, .navs-mb__content_btn, .mobile-menu .currency button:not(.active), .mobile-menu .lang button:not(.active), .header .select_currency__btn input {
+.drop-shadow, .categories__content_right .content_result li, .categories__content_right .content_head__sort a, .categories__content .select_currency__btn input, .navs-mb__list.list-2 ul a, .navs-mb__list.list-2 .select_currency__btn input, .navs-mb__content_btn, .mobile-menu .currency button:not(.active), .mobile-menu .lang button:not(.active), .header .select_currency__btn input {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
 }
 
@@ -334,6 +334,11 @@ textarea {
 .form_range {
   position: relative;
 }
+.form_range__wrap_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .form_range__inp {
   position: relative;
   z-index: 1;
@@ -394,6 +399,13 @@ textarea {
   width: 100%;
   height: 100%;
   padding: 0 32px;
+}
+.form_range__val_item .currency {
+  position: absolute;
+  left: auto;
+  right: 12px;
+  color: #BEBEBE;
+  font-weight: 400;
 }
 .form_range svg,
 .form_range input[type=range]:not(.val) {
@@ -1887,6 +1899,87 @@ textarea {
 .navs-mb__list.list-2 .corner-icon {
   left: 261px;
 }
+.navs-mb__list.list-2 .list-2__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navs-mb__list.list-2 .select_currency {
+  position: relative;
+  flex-shrink: 0;
+}
+.navs-mb__list.list-2 .select_currency__btn {
+  padding: 4px 8px;
+  position: relative;
+  z-index: 1;
+}
+.navs-mb__list.list-2 .select_currency__btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  cursor: pointer;
+  opacity: 0;
+}
+.navs-mb__list.list-2 .select_currency__btn input {
+  border: 1px solid #F0F0F0;
+  width: 67px;
+  height: 30px;
+  border-radius: 16px;
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 130%;
+}
+.navs-mb__list.list-2 .select_currency__btn img {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.navs-mb__list.list-2 .select_currency__list {
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+  transform: translateY(100%);
+  background: #FFF;
+  border-radius: 10px;
+  padding: 16px;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 2;
+  width: 117px;
+}
+.navs-mb__list.list-2 .select_currency__list::before {
+  content: "";
+  position: absolute;
+  top: -26px;
+  left: 0;
+  width: 100%;
+  height: 26px;
+  background: transparent;
+  opacity: 0;
+}
+.navs-mb__list.list-2 .select_currency__list .icon {
+  display: none;
+}
+.navs-mb__list.list-2 .select_currency__list li:not(.icon) {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 14px;
+  line-height: 130%;
+}
+.navs-mb__list.list-2 .select_currency__list li:not(.icon).active {
+  color: #3AA600;
+}
+.navs-mb__list.list-2 .select_currency:hover .select_currency__list {
+  display: flex;
+}
 .navs-mb__list.list-2 h3 {
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
@@ -3156,6 +3249,82 @@ textarea {
   gap: 20px;
   position: relative;
   z-index: 1;
+}
+.categories__content .select_currency {
+  position: relative;
+  flex-shrink: 0;
+}
+.categories__content .select_currency__btn {
+  padding: 4px 8px;
+  position: relative;
+  z-index: 1;
+}
+.categories__content .select_currency__btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  cursor: pointer;
+  opacity: 0;
+}
+.categories__content .select_currency__btn input {
+  border: 1px solid #F0F0F0;
+  width: 67px;
+  height: 30px;
+  border-radius: 16px;
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 130%;
+}
+.categories__content .select_currency__btn img {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.categories__content .select_currency__list {
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+  transform: translateY(100%);
+  background: #FFF;
+  border-radius: 10px;
+  padding: 16px;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 2;
+  width: 117px;
+}
+.categories__content .select_currency__list::before {
+  content: "";
+  position: absolute;
+  top: -26px;
+  left: 0;
+  width: 100%;
+  height: 26px;
+  background: transparent;
+  opacity: 0;
+}
+.categories__content .select_currency__list .icon {
+  display: none;
+}
+.categories__content .select_currency__list li:not(.icon) {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 14px;
+  line-height: 130%;
+}
+.categories__content .select_currency__list li:not(.icon).active {
+  color: #3AA600;
+}
+.categories__content .select_currency:hover .select_currency__list {
+  display: flex;
 }
 .categories__content_right {
   width: calc(100% - 284px);
