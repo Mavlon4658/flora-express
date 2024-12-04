@@ -338,6 +338,10 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 16px;
+}
+.form_range__wrap_head h3 {
+  margin: 0 !important;
 }
 .form_range__inp {
   position: relative;
@@ -1903,6 +1907,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 16px;
 }
 .navs-mb__list.list-2 .select_currency {
   position: relative;
@@ -1984,7 +1989,6 @@ textarea {
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  margin-bottom: 16px;
 }
 .navs-mb__list.list-2 .form_range {
   margin-bottom: 16px;
