@@ -418,7 +418,22 @@ if (filterItems.length) {
     })
 }
 
+const sortBtn = document.querySelector('.categories .sort_btn');
+const sortContent = document.querySelector('.categories__content_right .content_head');
+
+if (sortBtn) {
+    sortBtn.onclick = () => {
+        sortContent.classList.toggle('active');
+    }
+}
+
 document.addEventListener('click', event => {
+    if (sortBtn) {
+        if (!sortBtn.contains(event.target) && !sortContent.contains(event.target)) {
+            sortContent.classList.remove('active');
+        }
+    }
+
     if (formSelect.length) {
         formSelect.forEach(el => {
             if (!el.contains(event.target)) {

@@ -2901,15 +2901,30 @@ textarea {
     padding-bottom: 2px;
   }
 }
-.categories__head .filter_btn {
-  padding: 6px 10px;
-  border-radius: 4px;
-  font-size: 12px;
+.categories__head_right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 @media screen and (min-width: 992px) {
-  .categories__head .filter_btn {
+  .categories__head_right {
     display: none !important;
   }
+}
+.categories__head_right button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+.categories__head .filter_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.categories__head .filter_btn img {
+  transform: scale(1.2);
 }
 .categories__filter {
   width: 264px;
@@ -2996,6 +3011,7 @@ textarea {
 .categories__filter_head {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 12px;
 }
 @media screen and (min-width: 992px) {
@@ -3003,7 +3019,7 @@ textarea {
     display: none !important;
   }
 }
-.categories__filter_head button {
+.categories__filter_head .categories__filter_close {
   width: 24px;
   height: 24px;
   display: flex;
@@ -3015,16 +3031,29 @@ textarea {
   text-transform: capitalize;
   font-size: 18px !important;
 }
+.categories__filter_head div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.categories__filter_head div button:first-child {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 14px;
+  color: #d63334;
+}
 .categories__filter_content {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  position: relative;
+  z-index: 1;
 }
 @media screen and (max-width: 992px) {
   .categories__filter_content {
     padding: 24px 12px;
     background: #FFF;
-    width: 320px;
+    width: 100%;
     height: 100%;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.05), 0 0 16px rgba(0, 0, 0, 0.15);
     overflow-y: auto;
@@ -3058,22 +3087,28 @@ textarea {
   stroke: #3AA600;
 }
 .categories__filter_content ul {
-  display: flex;
-  flex-direction: column;
   gap: 14px;
   margin-top: 16px;
-  max-height: 148px;
-  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-.categories__filter_content ul::-webkit-scrollbar {
-  width: 3px;
-}
-.categories__filter_content ul::-webkit-scrollbar-track {
-  background: transparent;
-}
-.categories__filter_content ul::-webkit-scrollbar-thumb {
-  background: #F9DA7F;
-  border-radius: 3px;
+@media screen and (min-width: 992px) {
+  .categories__filter_content ul {
+    display: flex;
+    flex-direction: column;
+    max-height: 148px;
+    overflow-y: auto;
+  }
+  .categories__filter_content ul::-webkit-scrollbar {
+    width: 3px;
+  }
+  .categories__filter_content ul::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .categories__filter_content ul::-webkit-scrollbar-thumb {
+    background: #F9DA7F;
+    border-radius: 3px;
+  }
 }
 .categories__filter_content ul label {
   font-size: 14px;
@@ -3098,10 +3133,29 @@ textarea {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
+.categories__filter_content .btns_wrap {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+}
+@media screen and (min-width: 992px) {
+  .categories__filter_content .btns_wrap .btn-yellow {
+    display: none !important;
+  }
+}
+.categories__filter_content .btns_wrap .btn-yellow, .categories__filter_content .btns_wrap .btn-yellow-border {
+  width: 100%;
+  padding: 0;
+  height: 44px;
+  gap: 8px;
+  font-size: 12px;
+}
 .categories__content {
   display: flex;
   align-items: flex-start;
   gap: 20px;
+  position: relative;
+  z-index: 1;
 }
 .categories__content_right {
   width: calc(100% - 284px);
@@ -3119,7 +3173,23 @@ textarea {
 }
 @media screen and (max-width: 992px) {
   .categories__content_right .content_head {
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    text-align: right;
+    background: #FFF;
+    z-index: 2;
+    max-width: 100%;
+    right: 0;
+    top: -16px;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.05), 0 0 16px rgba(0, 0, 0, 0.15);
+    display: none;
+  }
+  .categories__content_right .content_head.active {
+    display: flex;
   }
 }
 @media screen and (max-width: 576px) {
@@ -3127,6 +3197,11 @@ textarea {
     flex-direction: column;
     gap: 12px;
   }
+}
+.categories__content_right .content_head .corner-icon {
+  position: absolute;
+  top: -10px;
+  right: 40px;
 }
 .categories__content_right .content_head__sort {
   display: flex;
@@ -3138,6 +3213,11 @@ textarea {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .categories__content_right .content_head__sort {
+    align-items: flex-end;
   }
 }
 .categories__content_right .content_head__sort h3 {
@@ -3154,6 +3234,7 @@ textarea {
   .categories__content_right .content_head__sort ul {
     flex-wrap: wrap;
     gap: 4px;
+    justify-content: flex-end;
   }
 }
 .categories__content_right .content_head__sort a {
@@ -3243,6 +3324,11 @@ textarea {
   gap: 8px;
   margin-bottom: 20px;
 }
+@media screen and (max-width: 992px) {
+  .categories__content_right .content_result {
+    display: none;
+  }
+}
 .categories__content_right .content_result li {
   display: flex;
   align-items: center;
@@ -3286,11 +3372,42 @@ textarea {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+.categories__content_right .more-card {
+  margin-bottom: 32px;
+}
 
 .accordion__body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+}
+.pagination a {
+  min-width: 40px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 24px;
+}
+.pagination a:hover {
+  background: #f5f5f5;
+}
+.pagination a.active {
+  background: #3AA600;
+  color: white;
+}
+.pagination span {
+  font-size: 12px;
+  margin: 0 4px;
 }
 
 .product {
