@@ -992,7 +992,7 @@ textarea {
   border-radius: 16px;
   padding: 36px;
   z-index: 2;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
