@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+@font-face {
+    font-family: 'Trebuchet MS';
+    src: url('../fonts/trebuchetms.ttf');
+}
 
 // Fonts
 $font-montserrat: "Montserrat", sans-serif;
 $font-roboto-flex: "Roboto Flex", sans-serif;
+$font-trebuchet-ms: "Trebuchet MS", sans-serif;
 // Fonts end
 
 // Colors

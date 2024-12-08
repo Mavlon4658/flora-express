@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-const modalClasses = ['.login-modal'];
+const modalClasses = ['.login-modal', '.buy-product-modal'];
 
 if (modalClasses.length) {
     modalClasses.forEach(cls => {
@@ -89,13 +89,6 @@ if (currencyEl.length) {
     })
 }
 
-
-// if (currencyItem.length) {
-//     currencyItem.forEach(el => {
-//         el.onclick = () => {
-//         }
-//     })
-// }
 
 const formSelect = document.querySelectorAll('.form_select');
 
@@ -185,18 +178,33 @@ if (likeBtn.length) {
     })
 }
 
-const reviewSwp = new Swiper('.reviews .swiper', {
-    slidesPerView: 3,
-    spaceBetween: 20,
-    navigation: {
-        nextEl: '.reviews .swp_btn__next',
-        prevEl: '.reviews .swp_btn__prev',
-    },
-    pagination: {
-        el: '.reviews .swp_pagination',
-        clickable: true
+
+var init = false;
+var swiper;
+function swiperCard() {
+    if (window.innerWidth > 992) {
+        if (!init) {
+            init = true;
+            swiper = new Swiper('.reviews .swiper', {
+                slidesPerView: 3,
+                spaceBetween: 20,
+                navigation: {
+                    nextEl: '.reviews .swp_btn__next',
+                    prevEl: '.reviews .swp_btn__prev',
+                },
+                pagination: {
+                    el: '.reviews .swp_pagination',
+                    clickable: true
+                }
+            })
+        }
+    } else if (init) {
+        swiper.destroy();
+        init = false;
     }
-})
+}
+swiperCard();
+window.addEventListener("resize", swiperCard);
 
 const rangesEl = document.querySelectorAll(".form_range");
 
@@ -388,15 +396,24 @@ const pChildSwp = new Swiper('.product .child_swp .swiper', {
     }
 })
 
-const pPrentSwp = new Swiper('.product .parent_swp .swiper', {
+const pParentSwp = new Swiper('.product .parent_swp .swiper', {
     slidesPerView: 1,
     spaceBetween: 0,
     effect: 'fade',
+    allowTouchMove: true,
     loop: true,
-    allowTouchMove: false,
+    breakpoints: {
+        992: {
+            allowTouchMove: false,
+        }
+    },
     thumbs: {
         swiper: pChildSwp,
     },
+    pagination: {
+        el: '.product__left .swp_pagination',
+        clickable: true,
+    }
 })
 
 const filterItems = document.querySelectorAll('.categories__filter .form_checkbox');
@@ -441,6 +458,36 @@ if (sortBtn) {
     sortBtn.onclick = () => {
         sortContent.classList.toggle('active');
     }
+}
+
+const phoneInp = document.querySelectorAll('.form_inp input[type="tel"]');
+
+if (phoneInp.length) {
+    phoneInp.forEach(el => {
+        IMask(el, {
+            mask: '+{7}(000)000-00-00',
+        })
+    });
+}
+
+const calculation = document.querySelectorAll('.calculation');
+
+if (calculation.length) {
+    calculation.forEach(el => {
+        const minus = el.querySelector('.minus');
+        const plus = el.querySelector('.plus');
+        const text = el.querySelector('p');
+
+        minus.onclick = () => {
+            if (+text.textContent != 1) {
+                text.textContent = +text.textContent - 1;
+            }
+        }
+
+        plus.onclick = () => {
+            text.textContent = +text.textContent + 1;
+        }
+    })
 }
 
 document.addEventListener('click', event => {
