@@ -6,6 +6,22 @@ const bodyVisible = () => {
     document.querySelector('body').style.overflow = 'visible';
 }
 
+let locationEl = document.querySelector('.header__location');
+let locationClose = document.querySelector('.header__location .close_btn');
+let locationBtn = document.querySelector('.header__location_inp');
+let locationContent = document.querySelector('.header__location_content');
+let cityInp = document.querySelector('.header__location_content .form_inp input');
+
+if (locationBtn) {
+    locationBtn.onclick = () => {
+        locationEl.classList.toggle('active');
+    }
+    
+    locationClose.onclick = () => {
+        locationEl.classList.remove('active');
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const datePicker = document.querySelectorAll('.date-picker');
 
@@ -15,7 +31,15 @@ document.addEventListener("DOMContentLoaded", function () {
             const pickerEl = el.querySelector('.flatpickr');
             flatpickr(pickerEl, {
                 locale: 'ru',
-                dateFormat: '\\Da\\y picke\\d: Y/m/d'
+                dateFormat: '\\Da\\y picke\\d: Y/m/d',
+                onChange: function(selectedDates, dateStr, instance) {
+                    const selectedDate = selectedDates[0];
+                    const day = selectedDate.getDate();
+                    const monthName = new Intl.DateTimeFormat('ru-RU', { month: 'long' }).format(selectedDate);
+                    let text = `${cityInp.value != '' ? cityInp.value : 'Москва'} (МКАД), Россия—на ${day} ${monthName}`
+                    locationBtn.querySelector('input').value = text;
+                    locationEl.classList.remove('active');
+                }
             });
 
         })
@@ -118,21 +142,6 @@ if (formSelect.length) {
             })
         }
     })
-}
-
-let locationEl = document.querySelector('.header__location');
-let locationClose = document.querySelector('.header__location .close_btn');
-let locationBtn = document.querySelector('.header__location_inp');
-let locationContent = document.querySelector('.header__location_content');
-
-if (locationBtn) {
-    locationBtn.onclick = () => {
-        locationEl.classList.toggle('active');
-    }
-    
-    locationClose.onclick = () => {
-        locationEl.classList.remove('active');
-    }
 }
 
 const homeSwp = new Swiper('.home__swp .swiper', {

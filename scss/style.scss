@@ -4655,18 +4655,156 @@ textarea {
             flex-direction: column;
             gap: 8px;
 
-            h3 {
+            .title {
                 font-size: 24px;
                 font-weight: bold;
                 line-height: 120%;
                 color: #000;
                 font-family: $font-montserrat;
-                display: flex;
-                align-items: center;
-                gap: 8px;
 
                 @include media(992) {
                     font-size: 22px;
+                }
+
+                &__wrap {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+            }
+
+            .warning {
+                position: relative;
+
+                &:hover {
+                    z-index: 2;
+
+                    .warning__body {
+                        display: flex;
+                    }
+                }
+
+                &__body {
+                    position: absolute;
+                    background: #FFF;
+                    box-shadow: 0 0 16px rgba(0, 0, 0, 15%),
+                                0 0 4px rgba(0, 0, 0, 5%);
+                    border-radius: 10px;
+                    width: 280px;
+                    padding: 16px;
+                    left: 50%;
+                    bottom: -19px;
+                    transform: translate(-50%, 100%);
+                    display: none;
+                    flex-direction: column;
+                    gap: 8px;
+
+                    @include media(500) {
+                        left: auto;
+                        right: -20px;
+                        transform: translate(0, 100%);
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        width: 100%;
+                        height: 22px;
+                        top: 0;
+                        transform: translateY(-100%);
+                        background: transparent;
+                    }
+
+                    .icon {
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        transform: translate(-50%, -100%);
+
+                        @include media(500) {
+                            left: auto;
+                            right: 16px;
+                            transform: translate(0, -100%);
+                        }
+                    }
+
+                    .description {
+                        font-size: 14px;
+                        line-height: 130%;
+                        font-weight: 400;
+
+                        b {
+                            font-weight: bold;
+                        }
+                    }
+
+                    .accordion {
+                        &.active {
+                            .accordion__btn {
+                                border-color: rgba(0, 0, 0, 10%);
+
+                                img {
+                                    transform: rotateZ(180deg);
+                                }
+                            }
+                        }
+
+                        &__btn {
+                            display: flex;
+                            align-items: center;
+                            gap: 6px;
+                            padding: 8px 0;
+                            border-top: 1px solid transparent;
+                            transition: .3s ease all;
+                            width: 100%;
+
+                            img {
+                                transition: .3s ease all;
+                            }
+
+                            span {
+                                font-size: 14px;
+                                line-height: 130%;
+                            }
+                        }
+
+                        ul {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 8px;
+                            padding-top: 8px;
+                        }
+
+                        li {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            position: relative;
+                            z-index: 1;
+
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                bottom: 5px;
+                                left: 2px;
+                                width: calc(100% - 4px);
+                                z-index: -1;
+                                border-bottom: 1px dashed #888888;
+                            }
+                        }
+
+                        p {
+                            font-size: 14px;
+                            line-height: 130%;
+                            background: #FFF;
+                            padding-right: 4px;
+
+                            &:last-child {
+                                padding: 0 0 0 4px;
+                            }
+                        }
+                    }
                 }
             }
 
@@ -4996,6 +5134,7 @@ textarea {
         gap: 2px;
         align-items: center;
         text-align: center;
+        position: relative;
 
         p {
             font-size: 12px;
@@ -5006,6 +5145,24 @@ textarea {
             font-size: 16px;
             line-height: 130%;
             font-weight: bold;
+        }
+    }
+
+    &:hover {
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 15%);
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: -1px;
+            top: -1px;
+            width: calc(100%);
+            height: calc(100%);
+            border: 1px solid #3AA600;
+            z-index: -1;
+            border-radius: 17px;
         }
     }
 }
