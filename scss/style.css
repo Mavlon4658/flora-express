@@ -3192,9 +3192,11 @@ textarea {
 .footer-mb__app_link {
   display: flex;
   align-items: stretch;
+  justify-content: space-around;
   gap: 6px;
 }
 .footer-mb__app_link a {
+  max-width: 220px;
   width: calc(50% - 6px);
   display: flex;
   align-items: center;
